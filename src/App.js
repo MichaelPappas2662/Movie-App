@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
+import SearchBox from './components/SearchBox';
 
 const App = () => {
-  // eslint-disable-next-line
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
@@ -18,18 +18,19 @@ const App = () => {
     console.log(responseJson);
   };
 
-  // eslint-disable-next-line no-undef
+  
   useEffect(() => {
     getMovieRequest();
   }, [])
 
   return (
   <div className='container-fluid movie-app'>
-    <div className='row'>
+    <div className='row d-flex align-items-center mt-4 mb-4'>
       <MovieListHeading heading='Movies' />
     </div>
     <div className='row'>
       <MovieList movies={movies} />
+      <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
     </div>
   </div>
   );
