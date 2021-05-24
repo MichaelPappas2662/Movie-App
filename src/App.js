@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
@@ -9,19 +9,22 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-  const getMovieRequest = async () => {
-    const url = "http://www.omdbapi.com/?s=star wars&apikey=7b14acb1"
+  const getMovieRequest = async (searchValue) => {
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=7b14acb1`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
-    setMovies(responseJson.Search);
+
+    if(responseJson.searchValue){
+      setMovies(responseJson.Search);
+    };
     console.log(responseJson);
   };
 
   
   useEffect(() => {
-    getMovieRequest();
-  }, [])
+    getMovieRequest(searchValue);
+  }, [searchValue])
 
   return (
   <div className='container-fluid movie-app'>
