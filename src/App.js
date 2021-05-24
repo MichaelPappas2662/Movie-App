@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import MovieList from './components/MovieList';
 
 const App = () => {
+  // eslint-disable-next-line
   const [movies, setMovies] = useState([{
     "Title": "Star Wars: Episode IV - A New Hope",
     "Year": "1977",
