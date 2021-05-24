@@ -32,6 +32,21 @@ const App = () => {
     "Type": "movie",
     "Poster": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg"
 }]);
+
+  const getMovieRequest = async () => {
+    const url = "http://www.omdbapi.com/?s=star wars&apikey=7b14acb1"
+
+    const response = await fetch(url);
+    const responseJson = await response.json();
+
+    console.log(responseJson);
+  };
+
+  // eslint-disable-next-line no-undef
+  useEffect(() => {
+    getMovieRequest();
+  }, [])
+
   return (
   <div className='container-fluid movie-app'>
     <div className='row'>
