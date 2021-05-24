@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import MovieList from './components/MovieList';
+import MovieListHeading from './components/MovieListHeading';
 
 const App = () => {
   // eslint-disable-next-line
@@ -25,7 +26,7 @@ const App = () => {
   return (
   <div className='container-fluid movie-app'>
     <div className='row'>
-      
+      <MovieListHeading heading='Movies' />
     </div>
     <div className='row'>
       <MovieList movies={movies} />
