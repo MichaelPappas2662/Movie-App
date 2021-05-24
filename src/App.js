@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import MovieList from './components/MovieList';
 
 const App = () => {
   const [movies, setMovies] = useState([{
@@ -30,7 +31,7 @@ const App = () => {
     "Poster": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg"
 }]);
   return <div>
-    
+    <MovieList movies={movies} />
   </div>
 }
 
