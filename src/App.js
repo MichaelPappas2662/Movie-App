@@ -15,10 +15,10 @@ const App = () => {
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    if(responseJson.searchValue){
+    if(responseJson.Search){
       setMovies(responseJson.Search);
     };
-    console.log(responseJson);
+   
   };
 
   
