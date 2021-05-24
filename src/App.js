@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 import MovieList from './components/MovieList';
 
 const App = () => {
