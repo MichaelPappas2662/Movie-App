@@ -32,9 +32,13 @@ const App = () => {
     "Type": "movie",
     "Poster": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg"
 }]);
-  return <div>
-    <MovieList movies={movies} />
+  return (
+  <div className='container-fluid movie-app'>
+    <div className='row'>
+      <MovieList movies={movies} />
+    </div>
   </div>
-}
+  );
+};
 
 export default App;
