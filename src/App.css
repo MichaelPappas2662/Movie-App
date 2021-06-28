@@ -7,3 +7,19 @@ body {
   overflow-x: auto;
   flex-wrap: nowrap;
 }
+
+.image-container{
+  position: relative;
+  transition: transform 0.2s
+}
+
+.imagine-container:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.overlay{
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+}
